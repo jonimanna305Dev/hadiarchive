@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet" />
+    <title>Shaheed Osman Hadi Memorial Archive</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+    /* body {
+        background: radial-gradient(circle at top, #111827, #020617);
+        color: #e5e7eb;
+        font-family: 'Segoe UI', sans-serif;
+    } */
+
+    .timeline {
+        position: relative;
+        max-width: 1100px;
+        margin: auto;
+        padding: 80px 0;
+    }
+
+    /* Vertical Line */
+    .timeline::after {
+        content: '';
+        position: absolute;
+        width: 3px;
+        background: linear-gradient(to bottom, #22c55e, #3b82f6, #ec4899);
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .timeline-item {
+        padding: 20px 40px;
+        position: relative;
+        width: 50%;
+    }
+
+    .timeline-item.left {
+        left: 0;
+        text-align: right;
+    }
+
+    .timeline-item.right {
+        left: 50%;
+    }
+
+    /* Card */
+    .timeline-card {
+        background: rgba(255,255,255,0.06);
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 10px 30px rgba(0,0,0,.3);
+    }
+
+    /* Icon */
+    .timeline-icon {
+        position: absolute;
+        top: 32px;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: #22c55e;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 18px;
+        z-index: 10;
+    }
+
+    .left .timeline-icon {
+        right: -22px;
+    }
+
+    .right .timeline-icon {
+        left: -22px;
+    }
+
+    /* Badge */
+    .year-badge {
+        display: inline-block;
+        background: #22c55e;
+        color: #052e16;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .year-blue { background: #3b82f6; color: #eff6ff; }
+    .year-pink { background: #ec4899; color: #fff; }
+
+    h5 {
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    p {
+        font-size: 14px;
+        color: #cbd5f5;
+        margin-bottom: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .timeline::after {
+            left: 20px;
+        }
+
+        .timeline-item {
+            width: 100%;
+            padding-left: 60px;
+            padding-right: 20px;
+            text-align: left !important;
+            left: 0 !important;
+        }
+
+        .timeline-icon {
+            left: 0 !important;
+        }
+    }
+</style>
+
+<body class="bg-light" >
+    <div id="google_translate_element" style="display:none;"></div>
+
+    <!-- Example Code -->
+    <header class="bg-success text-white py-2">
+        <div class="container d-flex justify-content-between align-items-center">
+            <p class="mb-0">🕊️ Shaheed Sharif Osman Bin Hadi Memorial Archive</p>
+            <p class="mb-0">30 June 1993 – 18 December 2025</p>
+        </div>
+    </header>
+
+    <header class="">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand d-flex align-items-center" href="#">
+                        <img src="image/osman-hadi-portrait.jpg" alt="Osman Hadi Portrait"
+                            class="rounded-circle border border-success me-2"
+                            style="width: 50px; height: 50px; object-fit: cover" />
+                        <div class="lh-sm">
+                            <strong>Osman Hadi</strong><br />
+                            <small class="text-muted">Memorial Archive</small>
+                        </div>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav nav-pills me-auto ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link text-white bg-success active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Biography</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Media
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#"><i
+                                                class="bi bi-camera-video me-2"></i>Videos</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-camera me-2"></i>Photos</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-mic me-2"></i>Audios</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Writings
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-chat-dots me-2"></i>Speeches</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-file-text me-2"></i>Articles</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-type me-2"></i>Poems</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-quote me-2"></i>Quotes</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Documents</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Social Posts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Requests</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Timeline</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Events</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Locations</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Tributes</a>
+                            </li>
+                        </ul>
+                        <div class="d-flex align-items-center gap-2">
+                            <button class="btn btn-outline-info">
+                                <i class="bi bi-search"></i>
+                            </button>
+
+                            <select id="languageSwitcher" class="form-select w-auto">
+    <option value="en">EN</option>
+    <option value="bn">BN</option>
+</select>
+                        </div>
+                        <!-- <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </form> -->
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="mt-2 bg-dark py-5">
+        <div class="container">
+            <div class="text-center">
+
+                <img src="image/osman-hadi-portrait.jpg" alt="Osman Hadi Portrait"
+                    class="img-thumbnail rounded-circle border border-5 border-success mt-4"
+                    style="width:300px; height:300px; object-fit:cover;">
+
+                <h1 class="text-white display-5 fw-bold mt-4">
+                    Shaheed <span class="text-success">Sharif Osman Bin Hadi</span>
+                </h1>
+
+                <h4 class="text-light mt-4">
+                    Revolutionary July Fighter & Spokesperson of Inqilab Moncho
+                </h4>
+
+                <h5 class="text-white mt-4">
+                    <span class="me-3"><i class="bi bi-calendar2-event me-2"></i>30 June 1993</span>
+                    <span class="me-3">—</span>
+                    <span class="text-danger"><i class="bi bi-calendar2-event me-2"></i>18 December 2025</span>
+                </h5>
+
+                <p class="text-light mt-4">
+                    <i class="bi bi-geo-alt-fill me-2 text-success"></i>
+                    Burial: Dhaka University Central Mosque
+                </p>
+
+                <div class="mt-4">
+                    <button class="btn btn-success btn-lg me-3">
+                        Read Biography
+                    </button>
+
+                    <button class="btn btn-outline-secondary btn-lg">
+                        <i class="bi bi-play-circle me-2"></i>
+                        Watch Videos
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="mt-4">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap p-4 rounded-1 bg-light shadow-lg">
+
+                <!-- Left Side -->
+                <div class="mb-2 mb-md-0">
+                    <p class="mb-1 text-danger fw-semibold">Justice Demand</p>
+                    <h5 class="mb-0">Justice pending for Shaheed Osman Hadi</h5>
+                </div>
+
+                <!-- Right Side Countdown -->
+                <div class="d-flex align-items-center gap-3 flex-wrap">
+
+                    <div class="text-center">
+                        <h1 class="fw-bold text-success mb-0" id="days">0</h1>
+                        <small class="text-uppercase">Days</small>
+                    </div>
+
+                    <h1 class="fw-bold mb-0">:</h1>
+
+                    <div class="text-center">
+                        <h1 class="fw-bold text-success mb-0" id="hours">0</h1>
+                        <small class="text-uppercase">Hrs</small>
+                    </div>
+
+                    <h1 class="fw-bold mb-0">:</h1>
+
+                    <div class="text-center">
+                        <h1 class="fw-bold text-success mb-0" id="minutes">0</h1>
+                        <small class="text-uppercase">Min</small>
+                    </div>
+
+                    <h1 class="fw-bold mb-0">:</h1>
+
+                    <div class="text-center">
+                        <h1 class="fw-bold text-success mb-0" id="seconds">0</h1>
+                        <small class="text-uppercase">Sec</small>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mt-5">
+        <header class="container text-center">
+            <h1>"Fascism has been established in Bangladesh for the last 14-15 years. We dream of building a
+                justice-based state."</h1>
+        </header>
+        <h2 class="mt-5 text-center text-success">Explore the Archive</h2>
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-4 g-4 mt-4">
+                <div class="col">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <p class="btn btn-danger text-white fs-3"><i class="bi bi-camera-video"></i></p>
+                                <h5 class="card-title text-dark fw-bold mb-1">Videos</h5>
+                                <p class="card-text text-muted mb-0">Speeches & Interviews</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <p class="btn btn-primary text-white fs-3"><i class="bi bi-image"></i></p>
+                                <h5 class="card-title text-dark fw-bold mb-1">Photo</h5>
+                                <p class="card-text text-muted mb-0">Photos Gallery</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <p class="btn btn-info fs-3"><i class="bi bi-file-earmark-text"></i></p>
+                                <h5 class="card-title text-dark fw-bold mb-1">Speeches</h5>
+                                <p class="card-text text-muted mb-0">Written Speeches</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <p class="btn btn-success fs-3"><i class="bi bi-clock"></i></p>
+                                <h5 class="card-title text-dark fw-bold mb-1">Timeline</h5>
+                                <p class="card-text text-muted mb-0">Life Event</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <p class="btn btn-warning fs-3"><i class="bi bi-calendar4-event"></i></p>
+                                <h5 class="card-title text-dark fw-bold mb-1">Events</h5>
+                                <p class="card-text text-muted mb-0">Janaza & Memorials</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <p class="btn btn-success text-white fs-3"><i class="bi bi-geo-alt"></i></p>
+                                <h5 class="card-title text-dark fw-bold mb-1">Locations</h5>
+                                <p class="card-text text-muted mb-0">Important Places</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <p class="btn btn-danger text-white fs-3"><i class="bi bi-book"></i></p>
+                                <h5 class="card-title text-dark fw-bold mb-1">Writings</h5>
+                                <p class="card-text text-muted mb-0">Articles & Poems</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <p class="btn btn-primary text-white fs-3"><i class="bi bi-heart"></i></p>
+                                <h5 class="card-title text-dark fw-bold mb-1">Tributes</h5>
+                                <p class="card-text text-muted mb-0">Pay Tribute</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="mt-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1 class="fw-bold text-success m-0">Latest Videos</h1>
+                <a href="#" class="btn btn-outline-success">See All <i class="bi bi-arrow-right"></i></a>
+            </div>
+            <p class="text-muted text-small mt-2">Speeches, Interviews & Documentaries </p>
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                <div class="col">
+                    <a href="#" class="text-decoration-none text-dark">
+                        <div class="card">
+                            <img src="https://devmannaabid.github.io/webtan/img/slide%202.jpg" class="card-img-top"
+                                style="height: 11rem;" alt="..." />
+                            <div class="card-body">
+                                <p class="card-title fw-bold">
+                                    Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#" class="text-decoration-none text-dark">
+                        <div class="card">
+                            <img src="https://devmannaabid.github.io/webtan/img/slide%202.jpg" class="card-img-top"
+                                style="height: 11rem;" alt="..." />
+                            <div class="card-body">
+                                <p class="card-title fw-bold">
+                                    Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#" class="text-decoration-none text-dark">
+                        <div class="card">
+                            <img src="https://devmannaabid.github.io/webtan/img/slide%202.jpg" class="card-img-top"
+                                style="height: 11rem;" alt="..." />
+                            <div class="card-body">
+                                <p class="card-title fw-bold">
+                                    Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#" class="text-decoration-none text-dark">
+                        <div class="card">
+                            <img src="https://devmannaabid.github.io/webtan/img/slide%202.jpg" class="card-img-top"
+                                style="height: 11rem;" alt="..." />
+                            <div class="card-body">
+                                <p class="card-title fw-bold">
+                                    Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mt-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <p class="fw-bold text-success m-0"><i class="bi bi-camera me-2"></i>Visual Archive</p>
+                <a href="#" class="btn btn-outline-success">View Full Gallery <i class="bi bi-arrow-right"></i></a>
+            </div>
+            <h1 class="text-dark mt-2 fw-bold">Eternal Moments in Memory</h1>
+        </div>
+        <div class="container py-4">
+            <div class="row g-3">
+
+                <!-- Line 1 -->
+                <div class="col-12">
+                    <div class="row g-3">
+
+                        <!-- Left Large Image -->
+                        <div class="col-lg-6">
+                            <div class="position-relative overflow-hidden rounded-4" style="height:500px;">
+                                <img src="image/image1.jpg" class="w-100 h-100 object-fit-cover rounded">
+                            </div>
+                        </div>
+
+                        <!-- Right Side 3 Images Stacked -->
+                        <div class="col-lg-6">
+                            <div class="row g-3">
+
+                                <div class="col-6">
+                                    <div class="overflow-hidden rounded-4" style="height:240px;">
+                                        <img src="image/image2.jpg" class="w-100 h-100 object-fit-cover rounded">
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="overflow-hidden rounded-4" style="height:240px;">
+                                        <img src="image/image3.jpg" class="w-100 h-100 object-fit-cover rounded">
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="overflow-hidden rounded-4" style="height:240px;">
+                                        <img src="image/image4.jpg" class="w-100 h-100 object-fit-cover rounded">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Line 2: 2 images side by side -->
+                <div class="col-12">
+                    <div class="row g-3">
+                        <div class="col-md-3">
+                            <div class="overflow-hidden rounded" style="height:240px;">
+                                <img src="image/image5.jpg" class="w-100 h-100 object-fit-cover rounded">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="overflow-hidden rounded" style="height:240px;">
+                                <img src="image/image6.jpg" class="w-100 h-100 object-fit-cover rounded">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="mt-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <p class="fw-bold text-success m-0"><i class="bi bi-images me-2"></i>Creative Archive</p>
+                <a href="#" class="btn btn-outline-success">View All Posters <i class="bi bi-arrow-right"></i></a>
+            </div>
+            <h1 class="text-dark mt-2 fw-bold">Eternal Moments in Memory</h1>
+            <p class="text-muted text-small h5">Creative posters and designs dedicated to Shaheed Osman Hadi.</p>
+        </div>
+        <div class="container py-4">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <small class="text-muted text-small p-2"><i class="bi bi-calendar4-event me-2"></i>19
+                                December 2025</small>
+                            <h5 class="card-title fw-bold">ওসমান হাদি কবিতা লিখতেন ‘সীমান্ত শরিফ’ নামে</h5>
+                            <p class="card-text" id="cardText">This is a longer card with supporting text below as a
+                                natural lead-in
+                                to additional content. This content is a little bit longer.</p>
+                            <p class="card-footer">
+                                <a href="#" class="text-decoration-none text-success">Read Full Article <i
+                                        class="bi bi-box-arrow-up-right"></i></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <small class="text-muted text-small p-2"><i class="bi bi-calendar4-event me-2"></i>18
+                                December 2025</small>
+                            <h5 class="card-title fw-bold">ওসমান হাদি ভাই: আমার একজনমে দেখা সবচে সাচ্চা বিপ্লবী</h5>
+                            <p class="card-text" id="cardText">This is a longer card with supporting text below as a
+                                natural lead-in
+                                to additional content. This content is a little bit longer.</p>
+                            <p class="card-footer">
+                                <a href="#" class="text-decoration-none text-success">Read Full Article <i
+                                        class="bi bi-box-arrow-up-right"></i></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <small class="text-muted text-small p-2"><i class="bi bi-calendar4-event me-2"></i>15
+                                December 2025</small>
+                            <h5 class="card-title fw-bold">ওসমান হাদির পরিবারের সবাই আলেম</h5>
+                            <p class="card-text" id="cardText">This is a longer card with supporting text below as a
+                                natural lead-in
+                                to additional content.</p>
+                            <p class="card-footer">
+                                <a href="#" class="text-decoration-none text-success">Read Full Article <i
+                                        class="bi bi-box-arrow-up-right"></i></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-dark text-light">
+        <div class="container text-center pt-5">
+            <h1 class="fw-bold">জীবনের পথচলা</h1>
+            <p class="text-secondary mt-2">
+                মাত্র ৩২ বছরের জীবনে একজন কবি থেকে বিপ্লবী, একজন ছাত্র থেকে জাতীয় নেতা
+            </p>
+        </div>
+        
+        <div class="timeline">
+        
+            <!-- Item 1 -->
+            <div class="timeline-item left">
+                <div class="timeline-icon">
+                    <i class="bi bi-emoji-smile"></i>
+                </div>
+                <div class="timeline-card">
+                    <span class="year-badge">১৯৯০</span>
+                    <h5>জন্ম</h5>
+                    <p>
+                        ঝালকাঠি জেলার নলছিটি উপজেলার সম্ভ্রান্ত পরিবারে জন্মগ্রহণ।
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Item 2 -->
+            <div class="timeline-item right">
+                <div class="timeline-icon bg-primary">
+                    <i class="bi bi-mortarboard"></i>
+                </div>
+                <div class="timeline-card">
+                    <span class="year-badge year-blue">২০১০</span>
+                    <h5>আলিম পাশ ও ভর্তি</h5>
+                    <p>
+                        ঢাকা বিশ্ববিদ্যালয়ে রাষ্ট্রবিজ্ঞান বিভাগে ভর্তি (২০১০–২০১১)।
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Item 3 -->
+            <div class="timeline-item left">
+                <div class="timeline-icon bg-pink">
+                    <i class="bi bi-book"></i>
+                </div>
+                <div class="timeline-card">
+                    <span class="year-badge year-pink">২০১৪</span>
+                    <h5>কাব্যগ্রন্থ প্রকাশ</h5>
+                    <p>
+                        প্রথম কাব্যগ্রন্থ প্রকাশ, ঢাকায় ব্যাপক পাঠকপ্রিয়তা অর্জন।
+                    </p>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="timeline-item right">
+                <div class="timeline-icon bg-primary">
+                    <i class="bi bi-mortarboard"></i>
+                </div>
+                <div class="timeline-card">
+                    <span class="year-badge year-blue">২০১০</span>
+                    <h5>আলিম পাশ ও ভর্তি</h5>
+                    <p>
+                        ঢাকা বিশ্ববিদ্যালয়ে রাষ্ট্রবিজ্ঞান বিভাগে ভর্তি (২০১০–২০১১)।
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Item 3 -->
+            <div class="timeline-item left">
+                <div class="timeline-icon bg-pink">
+                    <i class="bi bi-book"></i>
+                </div>
+                <div class="timeline-card">
+                    <span class="year-badge year-pink">২০১৪</span>
+                    <h5>কাব্যগ্রন্থ প্রকাশ</h5>
+                    <p>
+                        প্রথম কাব্যগ্রন্থ প্রকাশ, ঢাকায় ব্যাপক পাঠকপ্রিয়তা অর্জন।
+                    </p>
+                </div>
+            </div>
+        
+        </div>
+    </section>
+
+
+    <!-- <script>
+        // Maximum number of characters to show
+        const maxLength = 120;
+
+        // Select all elements with class 'card-text'
+        const cardTexts = document.querySelectorAll('.card-text');
+
+        cardTexts.forEach(el => {
+            if (el.textContent.length > maxLength) {
+                el.textContent = el.textContent.slice(0, maxLength) + '...';
+            }
+        });
+    </script> -->
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,bn',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+        </script>
+        
+        <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        
+            const languageSwitcher = document.getElementById('languageSwitcher');
+        
+            function changeLanguage(lang) {
+                const interval = setInterval(() => {
+                    const googleSelect = document.querySelector('.goog-te-combo');
+        
+                    if (googleSelect) {
+                        clearInterval(interval);
+                        googleSelect.value = lang;
+                        googleSelect.dispatchEvent(new Event('change'));
+                    }
+                }, 300);
+            }
+        
+            languageSwitcher.addEventListener('change', function () {
+                changeLanguage(this.value);
+            });
+        
+        });
+        </script>
+        
+
+    <script>
+        // Target date
+        const startDate = new Date("December 13, 2025 00:00:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            // Distance = target - now
+            let distance = startDate - now;
+            // If past, continue counting negative time (optional)
+            if (distance < 0) {
+                distance = Math.abs(distance); // count after date in positive numbers
+            }
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+        }
+        // Run every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+    <!-- End Example Code -->
+</body>
+
+</html>
